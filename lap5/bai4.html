@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Bài 4_lap5</title>
+</head>
+
+<body ng-app="myApp" ng-controller="viewCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 ">
+                <form>
+                    <div class="form-group">
+                        <label for="">Họ Và Tên: </label>
+                        <input ng-model="student.fullname" class="form-control" type="text" name="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Ngày Sinh: </label>
+                        <input ng-model="student.birthday" class="form-control" type="text" name="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Điểm: </label>
+                        <input ng-model="student.mark" class="form-control" type="text" name="">
+                    </div>
+                    <div class="mt-2 ">
+                        <button ng-click="save()" ng-disabled="index != -1" class="btn btn-primary" type="button">Thêm</button>
+                        <button ng-click="update()" ng-disabled="index == -1" class="btn btn-primary" type="button">Sửa</button>
+                        <button ng-click="delete()" ng-disabled="index == -1" class="btn btn-primary" type="button">Xoá</button>
+                        <button ng-click="scancel()" class="btn btn-primary" type="button">Huỷ</button>
+                        <button ng-click="clear()" class="btn btn-primary" type="button">Mới</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3 ">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <th>Họ Và Tên</th>
+                            <th>Ngày Sinh</th>
+                            <th>Điểm</th>
+                            <th>Action</th>
+                        </tr>
+                        <tr ng-repeat="st in list_student">
+                            <td>{{st.fullname}}</td>
+                            <td>{{st.birthday}}</td>
+                            <td>{{st.mark}}</td>
+                            <td>
+                                <span ng-if="st.mark < 5">Yeu|Kem</span>
+                                <span ng-if="st.mark >= 5 && st.mark <= 8">TB|Kha</span>
+                                <span ng-if="st.mark > 8">Gioi|Xuat Sac</span>
+                            </td>
+                            <td>
+                                <a href="" ng-click="edit($index)">Sửa</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.controller("viewCtrl", function($scope){
+            $scope.student = {};
+            $scope.index = -1;
+            $scope.save = function(){
+                $scope.list_student.push(angular.copy($scope.student));
+            }
+             // edit
+             $scope.edit = function(index){
+                $scope.index = index;
+                $scope.student = angular.copy($scope.list_student[index]);
+            }
+            // update
+            $scope.update = function(){
+                $scope.list_student[$scope.index] = angular.copy($scope.student);
+                $scope.clear();
+            }
+            // delete
+            $scope.delete = function(){
+                $scope.list_student.splice($scope.index,1);
+                $scope.clear();
+            }
+            // huỷ (scancel)
+            $scope.scancel = function(){
+                if($scope.index == -1){
+                    $scope.clear();
+                }else{
+                    $scope.edit($scope.index);
+                }
+            }
+            $scope.clear = function(){
+                $scope.student = {};
+            }
+            $scope.list_student = [
+            {
+                    fullname: "Lê Văn Anh",
+                    birthday: "12-10-2004",
+                    mark: 9.5
+                },
+                {
+                    fullname: "Lê Văn Long",
+                    birthday: "18-08-2004",
+                    mark: 9
+                },
+                {
+                    fullname: "Nguyễn Văn An",
+                    birthday: "18-04-2004",
+                    mark: 8.5
+                }
+            ]
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
