@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADMIN</title>
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/angular-route.js"></script>
+    <script src="/assets/vendor/jQuery/js/jquery-3.2.1.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/popper.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</head>
+
+<body ng-app="myController">
+
+    <div id="wrapper">
+        <header class="top-bar flex-row align-items-center">
+            <div class="nav-brand">
+                <div class="hamburg-icon">
+                    <a href="javascript:void(0)" class="nav-link">
+                        <i class="mdi mdi-menu md-24"></i>
+                    </a>
+                </div>
+                <div class="navbar-header">
+                    <h2 class="mb-0">
+                        <a class="navbar-brand" href="javascript:void(0)">
+                            <img src="img/Screenshot 2024-03-29 210419.png" width="159" alt="Admin">
+                        </a>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="navbar-container">
+                <div class="right-bar align-self-center">
+                    <div class="search-area">
+                        <input class="form-control no-border" type="text" placeholder="Search something special" />
+                        <div class="search-icon">
+                            <i class="mdi mdi-magnify md-24"></i>
+                            <i class="mdi mdi-arrow-left md-24"></i>
+                        </div>
+                        <div class="clear-icon">
+                            <i class="mdi mdi-close md-24"></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="pt-4  mb-4 ml-auto align-self-center">
+                    <nav class="navbar navbar-expand-lg navbar-dark ">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-bell"></i> Thông báo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-envelope"></i> Tin nhắn</a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </nav>
+
+                </div>
+                <div class="notifications">
+
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)" data-toggle="dropdown" class="nav-link pt-3" id="userProfile"
+                                aria-haspopup="true" aria-expanded="false">
+                                <img src="" width="24" alt="user"
+                                    class="rounded-circle align-middle" />
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="userProfile">
+                                <ul>
+
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            Đăng Xuất
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0)">
+                                            Thông tin cá nhân
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-wrapper" id="main-wrapper">
+            <!-- Left Navigation Start -->
+            <aside class="main-header">
+                <nav class="navbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-heading">
+
+                        </li>
+                        <li class="nav-heading">
+                            Sản phẩm
+                        </li>
+                        <li class="nav-item Route">
+                            <a class="nav-link has-submenu waves-effect open" title="Dashboard"
+                                href="javascript:void(0)">
+                                <i class="mdi mdi-view-dashboard md-18 mr-2"></i>
+                                <span class="menu-title">Danh Sách Sản Phẩm</span>
+                            </a>
+                            <div class="sub-menu level1">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a id="" class="nav-link " href="#!/product/list">List Sản Phẩm</a>
+
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item Route">
+                            <a class="nav-link has-submenu waves-effect" title="Mailbox" href="javascript:void(0)">
+                                <i class="mdi mdi-email md-18 mr-2"></i>
+                                <span class="menu-title">Danh Mục</span>
+                            </a>
+                            <div class="sub-menu level1">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="#!/category/list">List Danh Mục</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item Route">
+                            <a class="nav-link waves-effect" title="Widgets" href="/Widgets/Widgets">
+                                <i class="mdi mdi-settings-box md-18 mr-2"></i>
+                                <span class="menu-title">Widgets</span>
+                            </a>
+                        </li>
+                        <li class="nav-item Route">
+                            <a class="nav-link has-submenu waves-effect" title="Mailbox" href="javascript:void(0)">
+                                <i class="mdi mdi-email md-18 mr-2"></i>
+                                <span class="menu-title">MailBox</span>
+                            </a>
+                            <div class="sub-menu level1">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Mailbox/Inbox">Inbox</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Mailbox/Compose">Compose</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Mailbox/Template">Template</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-heading">
+                            Components
+                        </li>
+                        <li class="nav-item Route">
+                            <a class="nav-link has-submenu waves-effect" title="Elements" href="javascript:void(0)">
+                                <i class="mdi mdi-cube-outline md-18 mr-2"></i>
+                                <span class="menu-title">Elements</span>
+                            </a>
+                            <div class="sub-menu level1">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Accordians">Accordians</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Buttons">Buttons</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Badges">Badges</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Pagination">Pagination</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Cards">Cards</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Dropdowns">Dropdowns</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Modal">Modal</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/ProgressBar">ProgressBar</a>
+                                    </li>
+                                    <li class="nav-item Route Route">
+                                        <a class="nav-link has-submenu" href="javascript:void(0)">
+                                            Tabs
+                                        </a>
+                                        <div class="sub-menu level2">
+                                            <ul>
+                                                <li class="nav-item">
+                                                    <a class="nav-link "
+                                                        href="/Elements/BootstrapTabs">BootstrapTabs</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link " href="/Elements/LineTabs">LineTabs</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Typography">Typography</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Tooltips">Tooltips</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Notifications">Notifications</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Elements/Thumbnails">Thumbnails</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item Route">
+                            <a class="nav-link has-submenu waves-effect" title="Miscellaneous"
+                                href="javascript:void(0)">
+                                <i class="mdi mdi-flask md-18 mr-2"></i>
+                                <span class="menu-title">Miscellaneous</span>
+                            </a>
+                            <div class="sub-menu level1">
+                                <ul>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/Dragula">Dragula</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/Clipboard">Clipboard</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/ContextMenu">ContextMenu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/Sliders">Sliders</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/Carousel">Carousel</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/Miscellaneous/Loaders">Loaders</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                    </ul>
+                </nav>
+            </aside>
+
+            <main style="margin-top: 50px;">
+                <div ng-view>
+    
+                </div>
+    
+            </main>
+        </div>
+
+
+       
+    </div>
+
+    <!-- <script>
+        // Lắng nghe sự kiện click vào danh sách sản phẩm
+        document.getElementById('listProductLink').addEventListener('click', function (event) {
+            event.preventDefault();
+            document.getElementById('productList').style.display = 'block';
+        });
+
+    </script> -->
+
+
+    <script src="route/route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="controller/product/ProductAddController.js"></script>
+    <script src="controller/product/ProductListController.js"></script>
+    <script src="controller/product/ProductEditController.js"></script>
+    <script src="controller/product/ProductDentailController.js"></script>
+    <script src="controller/category/CategoryListController.js"></script>
+    <script src="controller/category/categoryAdd.js"></script>
+    <script src="controller/category/CategoryDetailController.js"></script>
+    <script src="controller/category/CategoryeditController.js"></script>
+   
+  
+</body>
+
+</html>

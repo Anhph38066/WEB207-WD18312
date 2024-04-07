@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <a class="btn btn-primary" href="#!/product/add">Thêm</a>
+    <div class="container text-center">
+       
+        <table class="table table-bordered mt-2">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Description</th>
+                    <th>Category</th> <!-- Thêm cột mới -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="pr in products">
+                    
+                    <td>{{pr.id}}</td>
+                    <td>{{pr.name}}</td>
+                    <td>{{pr.price}}</td>
+                    <td>{{pr.description}}</td>
+                    <td>{{getCategoryName(pr.category_id)}}</td> 
+                    <td>
+                        <button ng-click="onDetail(pr.id)" type="button" class="btn btn-danger">Chi tiết</button>
+                        <button ng-click="onDelete(pr.id)" type="button" class="btn btn-danger">Xóa</button>
+                        <button ng-click="onEdit(pr.id)" type="button" class="btn btn-warning">Sửa</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="container mt-3">
+  <a href="#!/category/add"><input type="button" value="Thêm Mới" class="btn btn-primary"></a>
+    <h2>Danh mục sản phẩm</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>Action</th>
+     
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat = "cat in category">
+          <td>{{cat.id}}</td>
+          <td>{{cat.name}}</td>
+        <td>
+            <button ng-click="onDetailCategory(cat.id)" type="button" class="btn btn-danger">Chi tiết</button>
+            <button ng-click="onDeleteCategory(cat.id)" type="button" class="btn btn-danger">Xóa</button>
+            <button ng-click="onEditCategory(cat.id)" type="button" class="btn btn-warning">Sửa</button>
+        </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

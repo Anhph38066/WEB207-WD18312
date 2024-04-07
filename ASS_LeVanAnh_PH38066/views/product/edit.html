@@ -1,0 +1,23 @@
+<form action="">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" name="name" id="name" ng-model="inputValidate.name" required>
+        <span class="text-danger" ng-show="checkData.name">Vui lòng nhập tên sản phẩm</span><br>
+
+        <label for="price" class="form-label">Price:</label>
+        <input type="number" class="form-control" name="price" id="price" ng-model="inputValidate.price" required>
+        <span class="text-danger" ng-show="checkData.price">Vui lòng nhập giá sản phẩm</span><br>
+
+        <label for="description" class="form-label">Description:</label>
+        <input type="text" class="form-control" name="description" id="description" ng-model="inputValidate.description" required>
+        <span class="text-danger" ng-show="checkData.description">Vui lòng nhập mô tả sản phẩm</span><br>
+
+        <!-- Thêm select để chọn danh mục -->
+        <label for="category" class="form-label">Category:</label>
+        <select class="form-control" name="category" id="category" ng-model="inputValidate.category_id" required>
+            <option value="" disabled selected>Chọn danh mục</option>
+            <option ng-repeat="cat in category" value="{{cat.id}}">{{cat.name}}</option>
+        </select>
+    </div>
+<button type="button" ng-click="onEditForm()" style="background-color: red;">Cập Nhật</button>
+</form>
